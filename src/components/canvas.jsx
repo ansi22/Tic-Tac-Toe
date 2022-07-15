@@ -70,7 +70,12 @@ function Canvas(props) {
           </div>
           <div className="move">
             {isWin == "Draw!" ? (
-              <>Match Draw!</>
+              <>
+                Match Draw!
+                <button id="btn-1" onClick={handleReset}>
+                  Play Again
+                </button>
+              </>
             ) : (
               <>
                 {isWin == "X" ? props.x : props.y} wins the game!
