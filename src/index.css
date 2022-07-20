@@ -61,6 +61,13 @@ body {
   font: 3.5rem "Fredericka the Great", cursive;
   color: white;
   border: 2px solid white;
+  box-shadow: 0 4px 8px 0 rgba(225, 225, 225, 0.4),
+    0 6px 20px 0 rgba(225, 225, 225, 0.4);
+}
+
+.square:hover {
+  box-shadow: 1px 1px 10px 1px rgba(225, 225, 225, 0.95);
+  background-color: rgba(225, 225, 225, 0.3);
 }
 
 .center {
@@ -130,6 +137,14 @@ body {
 
 #btn-1:hover {
   box-shadow: 0 0 10px 1px rgba(225, 225, 225, 0.95);
+}
+
+#f-req {
+  display: none;
+  margin-top: 40px;
+  margin-left: -80px;
+  font-size: 10px;
+  color: #ed4040;
 }
 
 @media screen and (max-width: 768px) {

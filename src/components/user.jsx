@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import Canvas from "./canvas";
+import React, { useState } from "react";
+import Canvas from "./Canvas";
 
 function User() {
-  const [playerA, setPlayerA] = useState(null);
-  const [playerB, setPlayerB] = useState(null);
+  const [playerA, setPlayerA] = useState("X");
+  const [playerB, setPlayerB] = useState("O");
   const [val, setVal] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setVal(true);
   };
-
+  console.log(playerA);
   return (
     <div className="center">
       {val == false ? (
@@ -22,10 +22,10 @@ function User() {
                 type="text"
                 name="name"
                 id="in"
+                placeholder="X"
                 onChange={(event) => {
                   setPlayerA(event.target.value);
                 }}
-                required
                 autoFocus
               />
             </label>
@@ -37,10 +37,10 @@ function User() {
                 type="text"
                 name="name"
                 id="in"
+                placeholder="O"
                 onChange={(event) => {
                   setPlayerB(event.target.value);
                 }}
-                required
               />
             </label>
             <br />
