@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import User from "./components/user/User";
 
 function App() {
+  const [click, setClick] = React.useState<boolean>(false);
+
+  let audioClick = new Audio("/click.mp3");
+  let audioBack = new Audio("/back.mp3");
+
+  function back() {
+    audioBack.play();
+    audioBack.loop = true;
+  }
+
+  function handleClick() {
+    setClick(true);
+    audioClick.play();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {click ? (
+        <>
+          {back()}
+          <User />
+        </>
+      ) : (
+        <>
+          <div className="App">
+            <h1 id="title">Wanna play Tic-Tac-Toe?</h1>
+
+            <button id="btn" onClick={handleClick}>
+              Click Me!
+            </button>
+          </div>
+        </>
+      )}
+    </>
   );
 }
-
 export default App;
